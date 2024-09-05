@@ -10,19 +10,20 @@
     typedef void (*fptr)();
 #endif
 
-
+namespace esphome {
 class Button{
-    public: 
-        Button(int pin);
-        void onDown(const fptr& callback);
-        void onUp(const fptr& callback);
-        void loop();
-        bool isPressed();
-        bool debug = false;
+public:
+    Button(int pin);
+    void onDown(const fptr& callback);
+    void onUp(const fptr& callback);
+    void loop();
+    bool isPressed();
+    bool debug = false;
 
-    private:
-        bool buttonPressed = false;
-        int pin;
-        esphome::optional<fptr> downCallback;
-        esphome::optional<fptr> upCallback;
+private:
+    bool buttonPressed = false;
+    int pin;
+    esphome::optional<fptr> downCallback;
+    esphome::optional<fptr> upCallback;
 };
+}
