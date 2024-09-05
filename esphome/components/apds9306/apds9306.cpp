@@ -69,11 +69,11 @@ void APDS9306::setup() {
     return;
   }
 
-  // ALS resolution and measurement, see datasheet or init.py for options
+  // ALS resolution and measurement, see datasheet or __init__.py for options
   uint8_t als_meas_rate = ((this->bit_width_ & 0x07) << 4) | (this->measurement_rate_ & 0x07);
   APDS9306_WRITE_BYTE(APDS9306_ALS_MEAS_RATE, als_meas_rate);
 
-  // ALS gain, see datasheet or init.py for options
+  // ALS gain, see datasheet or __init__.py for options
   uint8_t als_gain = (this->gain_ & 0x07);
   APDS9306_WRITE_BYTE(APDS9306_ALS_GAIN, als_gain);
 
